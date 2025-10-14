@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  # Servicio de la aplicación principal (Node.js/React)
+  app:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - .:/workspace:cached
+
+    # Mantén el contenedor corriendo
+    command: sleep infinity
+
+    # Variables de entorno para la aplicación
+    environment:
+      - MONGO_URI=mongodb://db:27017/custombag
+
+    # Conecta este servicio a la red de la base de datos
+    depends_on:
+      - db
+
+  # Servicio de la base de datos (MongoDB)
+  db:
+    image: mongo:5.0
+    volumes:
+      - mongodb_data:/data/db
+    ports:
+      - "27017:27017"
+
+volumes:
+  mongodb_data:

@@ -24,9 +24,29 @@ El proyecto está organizado en un monorepo con dos paquetes principales:
 
 ## Cómo Empezar
 
-Sigue estas instrucciones para poner en marcha el proyecto en tu entorno local.
+Puedes configurar el proyecto manualmente o usar Dev Containers para una configuración automática y consistente.
 
-### Prerrequisitos
+### Usando Dev Containers (Recomendado)
+
+Esta es la forma más sencilla de empezar. El contenedor incluye Node.js, MongoDB y todas las extensiones de VS Code recomendadas.
+
+**Prerrequisitos:**
+-   [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+-   [Visual Studio Code](https://code.visualstudio.com/)
+-   La extensión [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) de VS Code.
+
+**Pasos para lanzar:**
+1.  Clona este repositorio.
+2.  Abre la carpeta del repositorio en VS Code.
+3.  VS Code detectará automáticamente la configuración del Dev Container y te mostrará una notificación preguntando si quieres "Reopen in Container". Haz clic en ese botón.
+4.  La primera vez, Docker construirá la imagen, lo que puede tardar unos minutos. Las siguientes veces será mucho más rápido.
+5.  Una vez que el contenedor esté en funcionamiento, puedes abrir una terminal en VS Code y empezar a trabajar. Las dependencias ya estarán instaladas gracias al comando `postCreateCommand`.
+
+### Configuración Manual
+
+Sigue estas instrucciones si prefieres configurar el entorno en tu máquina local.
+
+**Prerrequisitos:**
 
 -   [Node.js](https://nodejs.org/) (versión 14 o superior)
 -   [MongoDB](https://www.mongodb.com/try/download/community) (puedes usar una instancia local o un servicio en la nube como MongoDB Atlas)
