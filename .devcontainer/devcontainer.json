@@ -1,0 +1,27 @@
+{
+    "name": "CustomBag Designer App",
+    "dockerComposeFile": "../docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/workspace",
+
+    // Configura las extensiones de VS Code que se instalarán automáticamente en el contenedor.
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "dbaeumer.vscode-eslint",
+                "esbenp.prettier-vscode",
+                "bradlc.vscode-tailwindcss",
+                "mongodb.mongodb-vscode"
+            ]
+        }
+    },
+
+    // Reenvía los puertos de la aplicación y la base de datos.
+    "forwardPorts": [5000, 5173, 27017],
+
+    // Ejecuta comandos después de crear el contenedor.
+    "postCreateCommand": "npm install --prefix backend && npm install --prefix frontend",
+
+    // Conecta como un usuario no root.
+    "remoteUser": "node"
+}
