@@ -1,6 +1,6 @@
 {
     "name": "CustomBag Designer App",
-    "dockerComposeFile": "../docker-compose.yml",
+    "dockerComposeFile": "docker-compose.yml",
     "service": "app",
     "workspaceFolder": "/workspace",
 
