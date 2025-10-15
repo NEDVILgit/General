@@ -1,17 +1,12 @@
-# Usa una imagen oficial de Node.js.
+# Usa una imagen oficial de Node.js que es una base común para Dev Containers.
+# La etiqueta "0-18" selecciona una versión estable de Node.js 18.
 FROM mcr.microsoft.com/devcontainers/javascript-node:0-18
 
-# Instala herramientas globales de Node.js si es necesario (ej. nodemon)
-# RUN npm install -g nodemon
+# El comando 'postCreateCommand' en devcontainer.json se encargará de
+# ejecutar 'npm install' después de que el contenedor se haya creado,
+# por lo que no necesitamos hacerlo aquí. Este enfoque es más simple y robusto.
 
-# Instala dependencias del sistema operativo si es necesario
+# Opcional: Si necesitaras instalar dependencias a nivel de sistema operativo,
+# lo harías aquí. Por ejemplo:
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-#     && apt-get -y install --no-install-recommends <your-packages>
-
-# [Opcional] Mejora la velocidad de npm en el contenedor
-COPY --chown=node:node ["frontend/package.json", "frontend/package-lock.json", "/tmp/frontend/"]
-COPY --chown=node:node ["backend/package.json", "backend/package-lock.json", "/tmp/backend/"]
-RUN cd /tmp/frontend && npm ci
-RUN cd /tmp/backend && npm ci
-RUN ln -s /tmp/frontend/node_modules /workspace/frontend/node_modules
-RUN ln -s /tmp/backend/node_modules /workspace/backend/node_modules
+#     && apt-get -y install --no-install-recommends git
