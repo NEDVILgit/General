@@ -20,7 +20,7 @@
     "forwardPorts": [5000, 5173, 27017],
 
     // Ejecuta comandos después de crear el contenedor.
-    "postCreateCommand": "npm install --prefix backend && npm install --prefix frontend",
+    "postCreateCommand": "cd backend && npm install && cd ../frontend && npm install",
 
     // Conecta como un usuario no root.
     "remoteUser": "node"
