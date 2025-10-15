@@ -19,8 +19,8 @@
     // Reenvía los puertos de la aplicación y la base de datos.
     "forwardPorts": [5000, 5173, 27017],
 
-    // Ejecuta comandos de depuración para ver el directorio de trabajo y su contenido.
-    "postCreateCommand": "pwd && ls -la && cd backend && npm install && cd ../frontend && npm install",
+    // Ejecuta comandos después de crear el contenedor.
+    "postCreateCommand": "cd backend && npm install && cd ../frontend && npm install",
 
     // Conecta como un usuario no root.
     "remoteUser": "node"
