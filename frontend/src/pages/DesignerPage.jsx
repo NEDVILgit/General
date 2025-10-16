@@ -7,7 +7,7 @@ const mockTemplate = {
     _id: "1",
     name: "Mochila Clásica",
     type: "Mochila",
-    baseImageUrl: '', // Se deshabilita la imagen externa para depurar el problema de carga.
+    baseImageUrl: 'https://via.placeholder.com/600x600.png?text=Base+Mochila', // URL de imagen base
     customizableAreas: [
         {
             name: 'Front Panel',
